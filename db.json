@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+   
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "artifacts": [
+    {
+      "id": 1,
+      "song_name": "Lindeman - Knebel",
+      "flavour_text": "Some would question if the risk was worth it. <br /> The rest were already dead.",
+      "image_url": "images/songsbands/knebel.jpg"
+    },
+    {
+      "id": 2,
+      "song_name": "Muse - Madness",
+      "flavour_text": "Some would question if the risk was worth it. <br /> The rest were already dead.",
+      "image_url": "images/songsbands/madness.jpg"
+    },
+    {
+      "id": 3,
+      "song_name": "AC/DC - Highway to hell",
+      "flavour_text": "Some would question if the risk was worth it. <br /> The rest were already dead.",
+      "image_url": "images/songsbands/ac-dc-highway-to-hell.jpg"
+    },
+    {
+      "id": 4,
+      "song_name": "Jim Croce - Time In A Bottle",
+      "flavour_text": "Some would question if the risk was worth it. <br /> The rest were already dead.",
+      "image_url": "images/songsbands/timeinabottle.jpg"
+    }
+  ],
+  "pricols": [
+    {
+      "id": "1",
+      "text": "Якщо довго їсти виноград, можна почати їсти ізюм XD"
+    }
+  ]
+}

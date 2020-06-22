@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+
+h2{
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+}
+a{
+   color: rgb(214, 214, 214); 
+   
+}
+a:hover{
+    text-shadow: 0.1em 0.1em rgb(255, 153, 0);   
+}
+#background{
+    position: fixed;
+    background-image: url("images/guitar_back_62.jpg") ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top:0;
+    margin-top: 10em;
+}
+body{
+    font-size: 75%;
+}
+input{
+    color:white;
+    background-color: rgba(153, 153, 153, 0);
+    font-family: 'Asap', sans-serif;;
+    font-size: 1em;
+    background-image: url("images/input.png");
+    background-size: 100% 100%;
+    border: 0px;
+    border-color: rgba(255, 255, 255, 0); 
+    width: 100%;  
+
+}
+input:hover{
+    background-color: rgba(63, 63, 63, 0.63);
+    
+}
+.top_bar{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 99;
+}
+
+.base{
+    padding-left: 7%;
+    padding-right: 7%;
+    position: relative;
+    display: flex;
+    flex-direction:  row;
+    margin-top: 13.5em;
+}
+
+#main_head{
+    display: unset;
+    width: max-content;
+    margin: 0%;
+}
+#main_head:hover{
+    text-shadow: 0.08em 0.08em rgb(255, 153, 0);  
+}
+.intro {
+    position: relative;
+    background-image: url("images/head3.jpg");
+    background-size: 100%;
+    padding: 0.3em;
+    align-self: center;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    text-shadow: 0.08em 0.08em rgb(109, 104, 104);
+    font-size: 3em;
+    color: rgb(214, 214, 214);
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+.navigation{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(13, 0, 34);
+    
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-size: 1em;
+    color: rgb(214, 214, 214);  
+    
+}
+.nav{
+    display: inline-block;
+    margin: 0px;
+    background-color: rgba(240, 240, 240, 0); 
+    text-align: right;
+    padding: 0em;
+
+}
+.navitem{
+    display: inline-block;
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0); 
+    text-align: right;
+    padding: 0.3em;
+    border-radius: 20%;
+    
+    border-color: rgb(255, 255, 255);
+}
+
+
+#sun2{
+    position: absolute;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+    
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.main{
+    /*display: flex;
+    flex-direction: column;*/
+    flex: auto;
+    margin-top: 0;
+    height: max-content;
+    padding: 1%;
+    font-size: 1.5em;
+    color: rgb(214, 214, 214);
+    background-color: rgba(121, 116, 151, 0.589);
+    padding-top: 0;
+
+}
+.list{
+    margin-left: 2%;  
+      
+}
+.list_chords{
+    cursor: pointer;
+}
+.sublist1{
+    margin-left: 2%;
+}
+.songitem{
+    margin-bottom: 3%;
+    margin-top: 3%; 
+}
+.song_name {
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+}
+
+.songimg{
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin: 4%;
+    
+    border-radius: 50%;
+}
+.songcover{
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin: 4%;
+    margin-bottom: 0%;
+    border-radius: 0%; 
+}
+.space{
+    background-color: rgba(0, 128, 128, 0);
+    width: 100%;
+    height: 8em
+    
+}
+.left_side{
+    
+    margin:2%;
+    object-fit: contain;
+    align-self: start;
+    width:max-content;
+    color: rgb(214, 214, 214);
+    background-color: rgba(54, 53, 53, 0);
+    
+}
+#contacts{
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-size: 1em;   
+    background-color: rgba(9, 1, 53, 0.507);
+    border-radius: 10%;
+    padding: 1em; 
+
+}
+
+#log_in{
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 10%;
+    border-color: rgba(255, 255, 255, 0);
+    padding: 0.5em;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    color: rgb(214, 214, 214);
+    background-color: rgba(9, 1, 53, 0.507);
+
+}
+#username{
+    width: 70%;
+}
+#password{
+    width: 70%;
+}
+.right_side{
+    
+    margin:2%;
+    object-fit: contain;
+    align-self: start;
+    width:max-content;
+    color: rgb(214, 214, 214);
+    background-color: rgba(9, 1, 53, 0);
+}
+.float_panel{
+    background-color: rgba(9, 1, 53, 0.507);
+    border-radius: 10%;
+    border-color: rgba(255, 255, 255, 0);
+    padding: 0.5em;
+    font-family: 'Asap', sans-serif;
+
+}
+#guess{
+    text-align: center;
+    font-size: 1.5em;
+ 
+}
+.inst{
+    
+    vertical-align: middle;
+}
+
+#quiz_button{
+    position: relative;
+    font-size: 1.5em;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-right: 2%;
+    border-color: rgba(255, 255, 255, 0);
+    padding: 0.5em;
+    object-fit: contain;
+    align-self: start;
+    width:max-content;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    color: rgb(214, 214, 214);
+    background-color: rgba(9, 1, 53, 0.507);
+    
+}
+
+
+
+#footer{
+   
+   position: absolute;
+   bottom: 0px;
+   font-size: 0.9em;
+   
+}
+footer{
+    
+}
+
+
+
+
+.q-container {
+    display: inline-block;
+    margin: auto;
+    background-color: rgba(240, 240, 240, 0); 
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+label.capsule {
+    display: block;
+    width: 60px;
+    line-height: 30px;
+    border-radius: 25px;
+    background-color: #EF9A9A;
+}
+
+.circle {
+    margin-top: 5px;
+    margin-left: 5px;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 30px;
+    /*border: 1px solid black;*/
+    background-color: rgb(219, 218, 218);
+    box-shadow: 2px 1px 1px 0px rgb(109, 105, 105);
+}
+
+.text-signs {
+    text-align: center;
+}
+
+.text-signs span {
+    user-select:none;
+    -webkit-user-select:none;
+    color: rgb(93, 81, 81);
+}
+
+#hidcheck:checked ~ .capsule .text-signs #on {
+    margin-left: -12px;
+    animation-name:toggle-on;
+    animation-duration:400ms;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-out;
+}
+
+#hidcheck:checked ~ .capsule .text-signs #on:before {
+    content: "on"
+}
+
+#hidcheck:not(:checked) ~ .capsule .text-signs #on {
+    margin-left: 12px;
+    animation-name:toggle-off;
+    animation-duration:400ms;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-out;
+}
+
+#hidcheck:not(:checked) ~ .capsule .text-signs #on:after {
+    content: "off"
+}
+
+@-webkit-keyframes toggle-on {
+    0% {margin-left: 0px;}
+    100% {margin-left: -12px;}
+}
+
+@-webkit-keyframes toggle-off {
+    0% {margin-left: 0px;}
+    100% {margin-left: 12px;}
+}
+
+#hidcheck:checked ~ .capsule {
+    background-color: #8BC34A;
+}
+
+#hidcheck:checked ~ .capsule .circle {
+    animation-name:toggle;
+    animation-duration:400ms;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-out;
+}
+
+#hidcheck:not(:checked) ~ .capsule .circle {
+    animation-name:toggle-back;
+    animation-duration:400ms;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-in-out;
+    animation-direction:reverse;
+}
+
+@-webkit-keyframes toggle-back {
+    0% {
+        margin-left: 2px;
+        box-shadow: 2px 1px 1px 0px rgb(109, 105, 105);
+    }
+
+    10% {
+        width: 22px;
+    }
+
+    20% {
+        width: 23px;
+    }
+
+    30% {
+        width: 24px;
+    }
+
+    40% {
+        width: 25px;
+    }
+
+    45% {
+        width: 27px;
+    }
+
+    50% {
+        width: 29px;
+    }
+
+    55% {
+        width: 27px;
+    }
+
+    60% {
+        width: 23px;
+    }
+
+    70% {
+        width: 22px;
+    }
+
+    80% {
+        width: 21px;
+    }
+
+    90% {
+        width: 20px;
+    }
+
+    100% {
+        margin-left: 38px;
+        width: 20px;
+        height: 20px;
+        box-shadow: -2px 1px 1px 0px rgb(109, 105, 105);
+    }
+}
+
+@-webkit-keyframes toggle {
+    0% {
+        margin-left: 2px;
+        box-shadow: 2px 1px 1px 0px rgb(109, 105, 105);
+    }
+
+    10% {
+        width: 22px;
+    }
+
+    20% {
+        width: 23px;
+    }
+
+    30% {
+        width: 24px;
+    }
+
+    40% {
+        width: 25px;
+    }
+
+    45% {
+        width: 27px;
+    }
+
+    50% {
+        width: 29px;
+    }
+
+    55% {
+        width: 27px;
+    }
+
+    60% {
+        width: 23px;
+    }
+
+    70% {
+        width: 22px;
+    }
+
+    80% {
+        width: 21px;
+    }
+
+    90% {
+        width: 20px;
+    }
+
+    100% {
+        margin-left: 38px;
+        width: 20px;
+        height: 20px;
+        box-shadow: -2px 1px 1px 0px rgb(109, 105, 105);
+    }
+}
+
+.Registration{
+    height: max-content;
+    width: max-content;
+   /* position: absolute;
+    top:10%;*/
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 10%;
+
+    padding: 2%;
+    font-size: 1.5em;
+    color: rgb(214, 214, 214);
+    background-color: rgba(9, 1, 53, 0.726);
+
+}
+
+.reg_buttons{
+    height: max-content;
+    width: max-content;
+    
+   /* position: absolute;
+    top:10%;*/
+    margin: 5%;
+    border: outset;
+    border-radius: 15%;
+    padding: 2%;
+    font-size: 1.5em;
+    color: rgb(214, 214, 214);
+    background-color: rgb(9, 1, 53);
+    background-image: none;
+
+}
+
+.Feedback{
+    color:white;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}

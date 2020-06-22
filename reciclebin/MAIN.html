@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>den</title>
+
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
+        
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <!-- <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+       
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link id="stylelink" rel="stylesheet" href="styles/nightnewstyle.css">
+        <link rel="icon" href="images/LOGO.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <div id="background">   </div>
+        <div class="top_bar">
+            <div id="intro" class="intro">
+                <header style="text-align: center;">
+                    <h1 id="main_head" >Guitarist's den</h1>
+                </header>
+            </div>
+            <div id="navigation" class="navigation"  >
+                <nav>
+                    <div class="navitem" >
+                        <small id="visitors">Visitors </small>
+                    </div>
+                    <div class="nav" style=" padding-left: 30%; padding-right: 20%; padding-top: 0px; padding-bottom: 0px;">
+                        <div class="navitem" >
+                            <a  href='#chords' style="color: rgb(214, 214, 214);">Chords</a>
+                        </div>
+                        <div class="navitem" >
+                            <a  href='#tabs' style="color: rgb(214, 214, 214);">Tabs</a>
+                        </div>
+                        <div class="navitem" >
+                            <a  href='#tabs' style="color: rgb(214, 214, 214);">Wallpaper</a>
+                        </div>
+                        <div class="navitem" >
+                            <a  href='#tabs' style="color: rgb(214, 214, 214);">Education</a>
+                        </div>
+                        <div class="navitem" >
+                            <a  href='#Feedback' style="color: rgb(214, 214, 214);">Feedback</a>
+                        </div>
+                    </div>
+                <div class="nav" style="padding-right: 2%;">
+                    <form >
+                        <input list="Search" placeholder="search">
+                        <datalist id="Search">
+                            <option value="Video guides">
+                            <option value="For beginner">
+                            <option value="For pro">
+                            <option value="AC/DC">
+                        </datalist>
+                    </form>
+
+                </div>
+                <div class="nav">
+                    Light theme
+                </div>
+                    <div id="theme_changer" class="nav">
+                        
+                        
+                        <div class="q-container">
+                            <div class="main2">
+                            <input type="checkbox" id="hidcheck" hidden>
+                            <label class="capsule" for="hidcheck" id="capsule-id">
+                                <div class="circle"> </div>
+                                <div class="text-signs">
+                                <span id="on"></span>
+                                </div>
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </nav>
+
+                
+            </div>
+        </div>
+        
+
+        <div id="base" class="base" >
+            <div class="left_side">
+                <div id="log_in" class="float_panel">
+                    <p>Log-in</p>
+                    <br>
+                    <form id="SignInForm"  onsubmit="validateLoginForm(event)" method="POST" action="login.php">
+                        <input type="text" id="username" placeholder="Username" name="username" onkeypress='validateLogin(event,"SignInForm",name)'>
+                        <br>
+                        <br>
+                        <input type="text" id="password" name="password" placeholder="Password" onkeypress='validatePassword(event,"SignInForm","password")'>
+                        <br>
+                        <br>
+                        <input id="sbutton" type="submit" class="reg_buttons" style="font-size:1em; align-self:center;" value="sign in" >
+
+                    </form>
+
+                    <p ><a id="regiatration" style="font-size: 0.7em; cursor: pointer;"  >Registration</a></p>
+                </div>
+                <br>
+                <br>
+
+
+
+                <div id="contacts" class="float_panel">
+                    <p>Contacts</p>
+                    <img id="sun2" src="images/LOGOonlySunlights.png" width="200" height="200" title="13?" style="cursor: help;">
+                    <img id="sun" src="images/LOGOonlySUN.png" width="200" height="200" title="13?" style="cursor: help;">
+                    
+                    <div>
+                        Boichuk Ivan
+                    </div>
+                    <div>
+                        
+                            <img class="inst" src="inst2.png" width="20" height="20" alt="inst">
+                        
+                        <a id="clickit" class="inst" href="https://www.instagram.com/lvasuk/" target="_blank"  style="color: rgb(214, 214, 214);">@lvasuk</a>
+                    </div>
+                </div>
+                <br>
+                
+               
+            </div>
+                                     
+            <div id="main" class="main">    
+
+                <div>
+                    -For Guitar
+                        <ul class="list" style="list-style-type:none;">
+                            <li> Ghords fingering:
+                                <ul class="sublist1" style="list-style: circle;">
+                                <li id="list1_Simple" class="list_chords" >Simple</li>
+                                <li id="list1_Abar" class="list_chords">A (la) bar chords</li>
+                                <li id="list1_Ebar" class="list_chords">E (mi) bar chords</li>
+                                </ul>
+                            </li>
+                            <li>Scale</li>
+                            <li>Pentatonic scales</li>
+                        </ul>
+                </div>
+
+               <div class="space"></div>
+
+                <div>
+                    <a><h2 id="chords" >Chords</h2></a>
+                    <small><a onclick="SortChords()" style="cursor: pointer;">sort</a></small>
+                    <table id="chordstable" class="songtable"></table>
+                        <div class="space"></div>
+
+
+                </div>
+                <script>
+                    function SortChords(){
+                        let data = JSON.stringify(songsArr);
+
+                        console.log(data);
+                        let xhr = new XMLHttpRequest();
+                        xhr.open("POST", "sort.php", true);
+                        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                        xhr.send(data);
+
+
+                        xhr.onerror = function() { 
+                        alert("ERROR!!");
+                        };
+                        xhr.onprogress = function () {
+                        console.log('LOADING: ', xhr.status);
+                        };
+                        xhr.onload = function() {
+                            if (xhr.status != 200) { 
+                                alert(`Помилка: ${xhr.status}: ${xhr.statusText}`); 
+                            } else { 
+                                console.log(xhr.response)
+                                document.getElementById("chordstable").innerHTML=xhr.response;
+
+                            }
+                        };
+                    }
+
+                </script>
+
+                <div class="space"></div>
+
+
+                <canvas id="myCanvas1" width="200" height="200" style="border:0px solid #000000;" >
+                </canvas>
+                <canvas id="myCanvas2" width="200" height="200" style="border:0px solid #000000;" >
+                </canvas>
+                <canvas id="myCanvas3" width="200" height="200" style="border:0px solid #000000;" >
+                </canvas>
+                <canvas id="myCanvas4" width="200" height="200" style="border:0px solid #000000;" >
+                </canvas>
+                
+                <script>
+                
+                    DrarCircle("myCanvas1","RED","DONT","PUSH!")
+                    DrarCircle("myCanvas2","green","STOP","ANIME")
+                    DrarCircle("myCanvas3","yellow","MAKE SUN","!!CRAZY!!")
+                    DrarCircle("myCanvas4","pink","MAKE","DISCO")
+
+                    $("#myCanvas1").click(()=>{Collapse();});
+                    $("#myCanvas2").click(()=>{StopAnimation();});
+                    $("#myCanvas3").mousedown(()=>{CrazySun();});
+                    $("#myCanvas4").dblclick(()=>{DISCO()});
+                    $("#myCanvas4").mouseup(()=>{DISCO()});
+
+                    //console.log($("#log_in").html())
+                    //$("#username").val("Hello WORLD")
+
+                    function DrarCircle(CanvasName,collor,textUp,textNOTUP){
+                        c = document.getElementById(CanvasName);
+                        ctx = c.getContext("2d");
+
+                        var grd = ctx.createRadialGradient(100, 100, 44, 100, 100, 60);
+                        grd.addColorStop(0, collor);
+                        grd.addColorStop(1, "rgba(0, 0, 0, 0)" );
+
+                        // Fill with gradient
+                        ctx.fillStyle = grd;
+                        ctx.fillRect(0, 0, 200, 200);
+
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+                        ctx.stroke();
+                    // Create gradient
+
+                    ctx.font = "25px Verdana";
+
+                        ctx.strokeText(textUp, 60, 95);
+                        ctx.strokeText(textNOTUP, 60, 120);
+                    }
+                    function Collapse(){
+                        $("*").hide();
+                    }
+
+                    function StopAnimation(){
+                        //$("*").finish()
+                        $("*").stop(true,true)
+                    }
+                    function CrazySun(){
+                        $( "#sun2" ).slideToggle( "slow", CrazySun )
+                        $( "#sun" ).toggle("fast", CrazySun )
+                    }
+                    function DISCO(){
+                        
+                        $( "a" ).toggle("fast", DISCO)
+                        $( "tr" ).toggle("slow", DISCO)
+                        $( "h2" ).slideToggle("fast", DISCO)
+                        $( "img" ).toggle(1000, DISCO)
+                        //$( "h1" ).toggle("slow", DISCO)
+                        $( "p" ).toggle("fast", DISCO)
+                        $( "h1" ).slideToggle("fast", DISCO)
+                        $( "#background" ).slideToggle("fast", DISCO)
+                        $( "ul" ).toggle("fast", DISCO)
+                        let hear = document.getElementById('disco');
+                        hear.play();
+
+                        
+                    }
+                </script> 
+
+                <div id="songs_items_conteiner_div">
+                </div>
+                
+                <div id="div1"></div>
+                <div id="div2"></div>
+
+                <button id="btnnn" class="reg_buttons">Get Pricol</button>
+                <button id="btnnn2" class="reg_buttons">Get Pricol 2 </button>
+
+                <br>
+                <hr>
+                <hr>
+                <br>
+                <input id="loxname" type="text" placeholder="lucky">
+                <button id="btnnn4" class="reg_buttons">^^0 make happy </button>
+                <br>
+                <hr>
+                <hr>
+                <br>
+                <input id="numb1" type="text" style="width: 50px;"> + <input id="numb2" type="text" style="width: 50px;"> = <small id="numb3"></small>
+                <button id="btnnn5" class="reg_buttons">calculate</button>
+                <br>
+                <hr>
+                <hr>
+                <br>
+                
+                
+                
+                <script>
+
+                    $("#btnnn").click(function(){
+                    $("#div1").load("getpricol.php" );
+                    });
+
+                    $("#btnnn2").click(function(){
+                        $.post("getpricol.php",
+                            function(response){
+                                   alert(response);
+                            });
+                        });       
+
+                   
+
+                    $("#btnnn4").click(function() {
+                        let name= document.getElementById("loxname").value;
+                        $.ajax({
+                            url: 'action.php?name='+name,
+                            success: function(response)
+                            {
+                               alert(response)
+                            }
+                    });
+                    });
+
+                    $("#btnnn5").click(function(){
+
+
+                        var numb2=document.getElementById("numb2").value;
+                        var numb1=document.getElementById("numb1").value;
+                        
+                        let data = JSON.stringify({
+                        number1: numb1 ,
+                        number2: numb2
+                        });
+
+                        let xhr = new XMLHttpRequest();
+                        xhr.open("POST", "action2.php", true);
+                        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                        xhr.send(data);
+
+
+                        xhr.onerror = function() { 
+                        alert("ERROR!!");
+                        };
+                        xhr.onload = function() {
+                            if (xhr.status != 200) { 
+                                alert(`Помилка: ${xhr.status}: ${xhr.statusText}`); 
+                            } else { 
+                                document.getElementById("numb3").innerHTML=xhr.response
+
+                            }
+                        };
+                        
+                        
+                    })
+                    
+
+                   
+           
+
+
+
+                </script>
+
+
+
+                <div id="Feedback" class="Feedback">
+                    <form method="POST">
+                        <fieldset>
+                            <legend id="GuessLegent">Feedback</legend>
+                            <textarea  id="feedtxt" class="Feedback" name="feedtxt" cols="40" rows="5" onkeypress="EnableButt()" ></textarea>
+                        </fieldset>
+                        <input id="Feddbackbutton" name="Feddbackbutton" type="submit" class="reg_buttons" style="font-size:1em; align-self:center; padding: 0%; margin: 0%; align-self: end;" value="Send Feedback" disabled>
+
+                    </form>
+                    
+                    <br>
+                    <div id="footer">
+                        <footer>IVASUK | <del>VALERY</del> | 2020</footer>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="right_side">
+                 
+            </div>
+
+            
+        </div>
+
+
+        
+        <audio id="listen" src="secret_song.mp3">
+            ERROR
+        </audio>
+        
+        
+        
+
+
+    </body>
+    
+</html>

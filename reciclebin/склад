@@ -1,0 +1,179 @@
+<div id="guess" class="float_panel">
+                    <p>Guess who is !vasuk`s crush<br>and get<br><a style="font-size: 2em;">100%</a><br>discount</p>
+
+                    <form id="GuessForm">
+                        <fieldset id="Guessfieldset" name="Guessfieldset">
+                            <legend id="GuessLegent">Your idea</legend>
+                            <input id="UserGuess" name="UserGuess" type="text">
+                        </fieldset>
+                        <br>                        
+                    </form>
+                    <input id="guessbutton" name="guessbutton" type="submit" class="reg_buttons" style="font-size:1em; align-self:center;" value="macke guess" onclick="MakeGuess()">
+
+                    <button id="clearbttn" name="clearbttn" class="reg_buttons" style="font-size:0.5em; align-self:center;"  onclick="ClearGuess()">clear</button>
+
+                </div>
+
+
+                
+                <br>
+                <H2>HARDMIND FILM</H2>
+                <canvas id="myFilm" width="800" height="200" style="border:2px solid #000000; ">
+                </canvas>
+                <input id="speedd" type="text" style="width: 50px; background-color: grey;">
+                <button class="reg_buttons" onclick="RunFilm()" >PLAY</button>
+                <H2>GISTOGRAMA</H2>
+                <canvas id="histo" width="800" height="200" style="border:0px solid #000000; background-color: rgba(65, 65, 65, 0.356);" onclick="BuildGisto()" >
+                </canvas>
+                <button class="reg_buttons" onclick="Clerhist()" >CLEAR</button>
+                <script>
+                    function Clerhist(){
+                        ClearCanvas(document.getElementById("histo"))
+                    }
+                    function BuildGisto(){
+                        let canvas = document.getElementById("histo");
+                        let ctx = canvas.getContext("2d");
+                        let step=10;
+                        let flag=1;
+                        let color="black"
+                        for(let x=step+20;x<canvas.width-20;x+=step){
+                            if(flag==1){
+                                color="black"
+                                DrawFillColorRect(ctx,x,10,step,getRandomInt(canvas.height),color)
+                                flag=0
+                            }
+                            else
+                            {
+                                color="white"
+                                DrawFillColorRect(ctx,x,10,step,getRandomInt(canvas.height),color)
+                                flag=1
+                            }
+                        }
+                        step=10
+                        // OX 
+                        ctx.beginPath();
+                        ctx.moveTo(20,10);
+                        ctx.lineTo(20,200);
+
+                        for(let y=step;y<canvas.height;y+=step){
+                            
+                            ctx.moveTo(20, y);
+                            ctx.lineTo(25, y);
+                            ctx.strokeStyle="red"
+                            ctx.stroke();
+
+                            ctx.font = "10px Arial";
+                            fillStyle="black"
+                            ctx.fillText(y, 0, y+10);
+                        }
+                        ctx.beginPath();
+                        ctx.moveTo(15,190);
+                        ctx.lineTo(25,190);
+                        ctx.lineTo(20,200);
+                        ctx.fillStyle="red"
+                        ctx.fill();
+
+                        //OY 
+                        ctx.beginPath();
+                        ctx.moveTo(20,10);
+                        ctx.lineTo(800,10);
+                        let xindx=1;
+                        for(let x=step+25;x<canvas.width-10;x+=step,++xindx){
+                            
+                            ctx.moveTo(x, 10);
+                            ctx.lineTo(x, 15);
+                            ctx.strokeStyle="red"
+                            ctx.stroke();
+
+                            ctx.font = "7px Arial";
+                            ctx.fillStyle="black"
+                            ctx.fillText(xindx, x, 8);
+                        }
+                        ctx.beginPath();
+                        ctx.moveTo(790,5);
+                        ctx.lineTo(790,15);
+                        ctx.lineTo(800,10);
+                        ctx.fillStyle="red"
+                        ctx.fill();
+                    }
+
+                    function getRandomInt(max) {
+                        return Math.floor(Math.random() * Math.floor(max));
+                    }
+
+                    function RunFilm(){
+                        Play($("#speedd").val());
+                    }
+
+                    async function Play(fps){
+                        let canvas = document.getElementById("myFilm");
+                        let ctx = canvas.getContext("2d");
+                        
+                        let position_Circle_x=30;
+                        const position_Circle_y=50;
+                        const RectRadius=30;
+
+                        let position_Rect_x=0;
+                        const position_Rect_Y=80;
+                        const RectWidth=60;
+                        const RectHight=120;
+
+                        step=canvas.width/fps;
+                        console.log(step)
+                        while(position_Circle_x < 770 && position_Rect_x < 770){
+                            DrawFillColorRect(ctx,0,0,canvas.width,canvas.height/2,"rgb(12, 191, 204)")
+                            DrawFillColorRect(ctx,0,canvas.height/2,canvas.width,canvas.height/2,"green")
+                            
+                            DrawFillColorRect(ctx,position_Rect_x,position_Rect_Y,RectWidth,RectHight,"black")
+
+                            DrawFillColorCircle(ctx,position_Circle_x,position_Circle_y,RectRadius,"black")
+                            DrawFillColorHalfCircle(ctx,position_Circle_x,position_Circle_y,RectRadius,"brown")
+                            
+                            await sleep(50);
+
+                            position_Circle_x+=step;
+                            position_Rect_x+=step
+                            //ClearCanvas(canvas)
+                        }
+                        DrawFillColorRect(ctx,0,0,canvas.width,canvas.height/2,"black")
+                        DrawFillColorRect(ctx,0,canvas.height/2,canvas.width,canvas.height/2,"red")
+                        ctx.fillStyle = "white"
+                        ctx.font = "50px Verdana";
+                        ctx.fillStyle = "white";
+                        ctx.fillText("THE END?? OR THE BEGINNING??", 0, canvas.height/2+20);
+                        await sleep(5000);
+                        ClearCanvas(canvas)
+                    }
+                    function sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                    }
+                    function DrawFillColorRect(ctx,x,y,w,h,color){
+                        ctx.fillStyle = color;
+                        ctx.fillRect(x,y,w,h);
+                    }
+                    function DrawFillColorCircle(ctx,x,y,r,color){
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(x, y, r, 0, 2 * Math.PI);
+                        ctx.fill()
+                        ctx.stroke();
+                    }
+                    function DrawFillColorHalfCircle(ctx,x,y,r,color){
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(x, y, r, 0, 1 * Math.PI);
+                        ctx.fill()
+                        ctx.stroke();
+                    }
+                    function DrawFillColorQuartCircle(ctx,x,y,r,color){
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(x, y, r,  0, 0.5*Math.PI);
+                        ctx.fill()
+                        ctx.stroke();
+                    }
+                    function ClearCanvas(canvas){
+                        const context = canvas.getContext('2d');
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                    }
+                </script>

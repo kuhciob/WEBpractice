@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Asap', sans-serif;
+    
+  }
+  #main_head{
+    display: unset;
+    width: max-content;
+    margin: 0%;
+}
+h6{
+    margin-bottom: 0;
+}
+pre{
+    color: white;
+}
+textarea{
+    color: white;
+}
+.base{
+    padding-left: 7%;
+    padding-right: 7%;
+    margin-top: 10.5em;
+}
+tbody{
+    width: 100%;
+}
+.nav{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px;
+    background-color: rgba(240, 240, 240, 0); 
+    text-align: right;
+    padding: 0em;
+
+}
+.navitem{
+    display: inline-block;
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0); 
+    text-align: right;
+    padding: 0.1em;
+    border-radius: 20%;
+    vertical-align: middle;
+    
+    border-color: rgb(255, 255, 255);
+}
+
+.mybutton{
+    background-color: rgba(255, 255, 255, 0);
+    background-image: none;
+}
+.songtable{
+    padding: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 1%;
+    border-style: solid;
+    border-width: "2px";
+    border-color: rgba(134, 134, 134, 0.849);
+}
+.songitem{
+    margin-bottom: 3%;
+    margin-top: 3%; 
+}
+.song_name {
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin-left: 10%;
+}
+
+.songimg{
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin: 4%;
+    
+    border-radius: 50%;
+}
+.songcover{
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin: 4%;
+    margin-bottom: 0%;
+    border-radius: 0%; 
+}
+.song_conteirner_th{
+    width: max-content;
+}
+.space{
+    background-color: rgba(0, 128, 128, 0);
+    width: 100%;
+    height: 8em
+    
+}
+
+
+.post_form{
+    width: 100%;
+    height: 100%;
+}
+.post_form_input{
+    width: 40%;
+}
+.post_form_textarea{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#footer{
+   
+
+    bottom: 0px;
+    font-size: 0.9em;
+    
+ }
+
+.inst{
+    
+    vertical-align: middle;
+}
+
+#sun2{
+    position: absolute;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+    
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@import url('https://fonts.googleapis.com/css?family=Asap:400,700&display=swap');
+
+h2{
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+}
+a{
+   color: rgb(214, 214, 214); 
+   
+}
+body{
+    font-size: 75%;
+}
+.top_bar{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 99;
+}
+.space{
+    background-color: rgba(0, 128, 128, 0);
+    width: 100%;
+    height: 8em
+    
+}
+#contacts{
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-size: 1em;   
+    border-radius: 10%;
+    padding: 1em; 
+
+}
+#SignInBlock{
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 10%;
+    border-color: rgba(255, 255, 255, 0);
+    padding: 0.5em;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    color: rgb(214, 214, 214);  
+}
+#footer{
+   
+   
+   bottom: 0px;
+   font-size: 0.9em;
+   
+}
+.songitem{
+    margin-bottom: 3%;
+    margin-top: 3%; 
+}
+.song_name {
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin-left: 10%;
+}
+
+.songimg{
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin: 4%;
+    
+    border-radius: 50%;
+}
+.songcover{
+    background-color: rgba(32, 32, 32, 0);
+    vertical-align: middle;
+    margin: 4%;
+    margin-bottom: 0%;
+    border-radius: 0%; 
+}
